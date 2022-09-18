@@ -40,6 +40,12 @@
         settings:controller="com.android.settings.gestures.SwipeToNotificationPreferenceController" />
 
     <Preference
+        android:key="swipe_to_screenshot_summary"
+        android:title="@string/swipe_to_screenshot_title"
+        android:fragment="com.android.settings.gestures.SwipeToScreenshotGestureSettings"
+        settings:controller="com.android.settings.gestures.SwipeToScreenshotPreferenceController" />  
+
+    <Preference
         android:key="gesture_double_tap_power_input_summary"
         android:title="@string/double_tap_power_for_camera_title"
         android:fragment="com.android.settings.gestures.DoubleTapPowerSettings"
@@ -95,14 +101,40 @@
         settings:controller="com.android.settings.gestures.ScreenOffUdfpsPreferenceController" />
 
     <Preference
+        android:key="power_button_torch_summary"
+        android:title="@string/power_button_torch_title"
+        android:fragment="com.android.settings.gestures.PowerButtonTorchSettings"
+        settings:controller="com.android.settings.gestures.PowerButtonTorchGesturePreferenceController" />
+
+    <Preference
         android:key="gesture_power_menu_summary"
         android:title="@string/power_menu_setting_name"
         android:fragment="com.android.settings.gestures.PowerMenuSettings"
         settings:controller="com.android.settings.gestures.PowerMenuPreferenceController" />
+
+    <Preference
+        android:key="double_tap"
+        android:fragment="com.android.settings.gestures.DoubleTapAmbientSettings"
+        android:title="@string/doze_double_tap_title"
+        android:summary="@string/doze_double_tap_summary"
+        settings:userRestriction="no_ambient_display" />
+
+    <com.android.settings.custom.preference.SystemSettingSwitchPreference
+        android:key="volume_button_music_control"
+        android:title="@string/volume_button_music_control_title"
+        android:summary="@string/volume_button_music_control_summary"
+        android:defaultValue="false"/>
 
     <com.android.settingslib.PrimarySwitchPreference
         android:key="gesture_prevent_ringing_summary"
         android:title="@string/gesture_prevent_ringing_screen_title"
         android:fragment="com.android.settings.gestures.PreventRingingGestureSettings"
         settings:controller="com.android.settings.gestures.PreventRingingParentPreferenceController" />
+
+    <com.android.settings.custom.preference.SecureSettingSwitchPreference
+        android:key="advanced_reboot"
+        android:title="@string/global_actions_advanced_reboot_title"
+        android:summary="@string/global_actions_advanced_reboot_summary"
+        android:defaultValue="false" />
+
 </PreferenceScreen>
