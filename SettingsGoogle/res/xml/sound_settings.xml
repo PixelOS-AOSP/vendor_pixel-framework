@@ -142,48 +142,6 @@
         android:summary="@string/summary_placeholder"
         android:title="@string/alarm_ringtone_title" />
 
-    <SwitchPreference
-        android:key="dial_pad_tones"
-        android:order="-50"
-        android:title="@string/dial_pad_tones_title" />
-
-    <SwitchPreference
-        android:key="screen_locking_sounds"
-        android:order="-45"
-        android:title="@string/screen_locking_sounds_title" />
-
-    <SwitchPreference
-        android:key="charging_sounds"
-        android:order="-40"
-        android:title="@string/charging_sounds_title" />
-
-    <SwitchPreference
-        android:key="docking_sounds"
-        android:order="-35"
-        android:title="@string/docking_sounds_title" />
-
-    <SwitchPreference
-        android:key="touch_sounds"
-        android:order="-30"
-        android:title="@string/touch_sounds_title" />
-
-    <DropDownPreference
-        android:key="dock_audio_media"
-        android:order="-25"
-        android:summary="%s"
-        android:title="@string/dock_audio_media_title" />
-
-    <SwitchPreference
-        android:key="boot_sounds"
-        android:order="-20"
-        android:title="@string/boot_sounds_title" />
-
-    <DropDownPreference
-        android:key="emergency_tone"
-        android:order="-15"
-        android:summary="%s"
-        android:title="@string/emergency_tone_title" />
-
     <Preference
         android:fragment="com.android.settings.notification.SoundWorkSettings"
         android:key="sound_work_settings"
@@ -191,4 +149,9 @@
         android:title="@string/sound_work_settings"
         settings:controller="com.android.settings.notification.WorkSoundsPreferenceController" />
 
+    <Preference
+	android:key="sound_settings_advanced"
+	android:title="@string/sound_settings_advanced_title"
+        android:fragment="com.android.settings.sound.AdvancedSoundSettings"
+	android:order="-20" />
 </PreferenceScreen>
