@@ -24,6 +24,7 @@ import com.android.systemui.qs.tileimpl.QSFactoryImpl;
 import com.android.systemui.qs.tileimpl.QSTileImpl;
 import com.android.systemui.qs.tiles.AirplaneModeTile;
 import com.android.systemui.qs.tiles.AlarmTile;
+import com.android.systemui.qs.tiles.BluetoothStockTile;
 import com.android.systemui.qs.tiles.BluetoothTile;
 import com.android.systemui.qs.tiles.CameraToggleTile;
 import com.android.systemui.qs.tiles.CastTile;
@@ -56,6 +57,18 @@ import com.google.android.systemui.qs.tiles.ReverseChargingTile;
 
 // Custom
 import com.android.systemui.qs.tiles.PowerShareTile;
+import com.android.systemui.qs.tiles.AmbientDisplayTile;
+import com.android.systemui.qs.tiles.AODTile;
+import com.android.systemui.qs.tiles.CaffeineTile;
+import com.android.systemui.qs.tiles.HeadsUpTile;
+import com.android.systemui.qs.tiles.SyncTile;
+import com.android.systemui.qs.tiles.UsbTetherTile;
+import com.android.systemui.qs.tiles.VpnTile;
+import com.android.systemui.qs.tiles.LiveDisplayTile;
+import com.android.systemui.qs.tiles.ReadingModeTile;
+import com.android.systemui.qs.tiles.AntiFlickerTile;
+import com.android.systemui.qs.tiles.AutoBrightnessTile;
+import com.android.systemui.qs.tiles.DataSwitchTile;
 
 import javax.inject.Inject;
 import javax.inject.Provider;
@@ -74,6 +87,7 @@ public class QSFactoryImplGoogle extends QSFactoryImpl {
             Provider<CustomTile.Builder> customTileBuilderProvider,
             Provider<WifiTile> wifiTileProvider,
             Provider<InternetTile> internetTileProvider,
+            Provider<BluetoothStockTile> bluetoothStockTileProvider,
             Provider<BluetoothTile> bluetoothTileProvider,
             Provider<CellularTile> cellularTileProvider,
             Provider<DndTile> dndTileProvider,
@@ -103,11 +117,24 @@ public class QSFactoryImplGoogle extends QSFactoryImpl {
             Provider<ColorCorrectionTile> colorCorrectionTileProvider,
             Provider<DreamTile> dreamTileProvider,
             Provider<ReverseChargingTile> reverseChargingTileProvider,
-            Provider<PowerShareTile> powerShareTileProvider) {
+            Provider<AmbientDisplayTile> ambientDisplayTileProvider,
+            Provider<AODTile> aodTileProvider,
+            Provider<PowerShareTile> powerShareTileProvider,
+            Provider<CaffeineTile> caffeineTileProvider,
+            Provider<DataSwitchTile> dataSwitchTileProvider,
+            Provider<HeadsUpTile> headsUpTileProvider,
+            Provider<SyncTile> syncTileProvider,
+            Provider<UsbTetherTile> usbTetherTileProvider,
+            Provider<VpnTile> vpnTileProvider,
+            Provider<AutoBrightnessTile> mautoBrightnessTileProvider,
+            Provider<LiveDisplayTile> liveDisplayTileProvider,
+            Provider<ReadingModeTile> readingModeTileProvider,
+            Provider<AntiFlickerTile> antiFlickerTileProvider) {
         super(qsHostLazy,
                 customTileBuilderProvider,
                 wifiTileProvider,
                 internetTileProvider,
+                bluetoothStockTileProvider,
                 bluetoothTileProvider,
                 cellularTileProvider,
                 dndTileProvider,
@@ -136,7 +163,19 @@ public class QSFactoryImplGoogle extends QSFactoryImpl {
                 oneHandedModeTileProvider,
                 colorCorrectionTileProvider,
                 dreamTileProvider,
-                powerShareTileProvider);
+                ambientDisplayTileProvider,
+                aodTileProvider,
+                powerShareTileProvider,
+                caffeineTileProvider,
+                dataSwitchTileProvider,
+                headsUpTileProvider,
+                syncTileProvider,
+                usbTetherTileProvider,
+                vpnTileProvider,
+                mautoBrightnessTileProvider,
+                liveDisplayTileProvider,
+                readingModeTileProvider,
+                antiFlickerTileProvider);
         mReverseChargingTileProvider = reverseChargingTileProvider;
         mBatterySaverTileGoogleProvider = batterySaverTileGoogleProvider;
     }
