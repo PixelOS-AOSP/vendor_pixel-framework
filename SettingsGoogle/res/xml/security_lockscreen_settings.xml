@@ -72,6 +72,12 @@
             android:title="@string/lockscreen_trivial_controls_setting_toggle"
             settings:controller="com.android.settings.display.ControlsTrivialPrivacyPreferenceController" />
 
+        <Preference
+            android:key="lockscreen_shortcuts"
+            android:title="@string/lockscreen_shortcuts"
+            android:summary="@string/lockscreen_shortcuts_summary"
+            android:fragment="com.android.settings.custom.shortcuts.LockscreenShortcuts" />
+
         <SwitchPreference
             android:key="lockscreen_double_line_clock_switch"
             android:summary="@string/lockscreen_double_line_clock_summary"
