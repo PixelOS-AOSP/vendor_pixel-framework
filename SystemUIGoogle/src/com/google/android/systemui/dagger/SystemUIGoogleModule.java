@@ -102,6 +102,7 @@ import com.google.android.systemui.statusbar.KeyguardIndicationControllerGoogle;
 import com.google.android.systemui.statusbar.policy.BatteryControllerImplGoogle;
 import com.google.android.systemui.elmyra.ServiceConfigurationGoogle;
 
+import com.android.systemui.statusbar.connectivity.BluetoothModule;
 import com.android.systemui.qs.tiles.CustomQSModule;
 
 import javax.inject.Named;
@@ -128,7 +129,8 @@ import dagger.Lazy;
         ElmyraModule.class,
         ColumbusModule.class,
         StatusBarEventsModule.class,
-        CustomQSModule.class
+        CustomQSModule.class,
+        BluetoothModule.class
 })
 public abstract class SystemUIGoogleModule {
 
