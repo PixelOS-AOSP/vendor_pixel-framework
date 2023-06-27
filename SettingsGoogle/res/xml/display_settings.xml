@@ -16,7 +16,7 @@
             settings:useAdminDisabledSummary="true"
             settings:userRestriction="no_config_brightness" />
 
-        <com.android.settings.display.AutoBrightnessPreference
+        <com.android.settingslib.PrimarySwitchPreference
             android:fragment="com.android.settings.display.AutoBrightnessSettings"
             android:key="auto_brightness_entry"
             android:title="@string/auto_brightness_title"
@@ -47,6 +47,7 @@
             android:key="pocket_judge"
             android:title="@string/proximity_wake_title"
             android:summary="@string/proximity_wake_summary" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
@@ -75,12 +76,6 @@
             android:title="@string/accessibility_text_reading_options_title"
             settings:controller="com.android.settings.accessibility.TextReadingFragmentForDisplaySettingsController" />
 
-        <Preference
-            android:key="icon_manager"
-            android:title="@string/icon_manager_title"
-            android:summary="@string/icon_manager_summary">
-            <intent android:action="com.android.settings.action.STATUS_BAR_TUNER" />
-        </Preference>
     </PreferenceCategory>
 
     <PreferenceCategory
@@ -125,7 +120,7 @@
             android:title="@string/force_high_refresh_rate_toggle"
             android:summary="@string/force_high_refresh_rate_desc"
             settings:controller="com.android.settings.display.ForcePeakRefreshRatePreferenceController"/>
-        
+
         <ListPreference
             android:key="max_refresh_rate"
             android:title="@string/max_refresh_rate_title"
@@ -148,6 +143,13 @@
             android:key="auto_rotate"
             android:title="@string/accelerometer_title"
             settings:controller="com.android.settings.display.SmartAutoRotatePreferenceController"
+            settings:keywords="@string/keywords_auto_rotate" />
+
+        <Preference
+            android:fragment="com.android.settings.display.SmartAutoRotatePreferenceFragment"
+            android:key="device_state_auto_rotate"
+            android:title="@string/accelerometer_title"
+            settings:controller="com.android.settings.display.DeviceStateAutoRotateOverviewController"
             settings:keywords="@string/keywords_auto_rotate" />
 
         <Preference
@@ -188,13 +190,13 @@
             android:key="tap_to_wake"
             android:summary="@string/tap_to_wake_summary"
             android:title="@string/tap_to_wake" />
-        
+
         <com.android.settings.custom.preference.SystemSettingSwitchPreference
             android:key="double_tap_sleep_gesture"
             android:title="@string/double_tap_sleep_gesture_title"
             android:summary="@string/double_tap_sleep_gesture_summary"
             android:defaultValue="false" />
-        
+
         <Preference
             android:key="display_cutout_force_fullscreen_settings"
             android:title="@string/display_cutout_force_fullscreen_title"
@@ -225,6 +227,24 @@
             android:fragment="com.android.settings.display.VrDisplayPreferencePicker"
             android:key="vr_display_pref"
             android:title="@string/display_vr_pref_title" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/customization_category_title">
+
+        <Preference
+            android:key="icon_manager"
+            android:title="@string/icon_manager_title"
+            android:summary="@string/icon_manager_summary">
+            <intent android:action="com.android.settings.action.STATUS_BAR_TUNER" />
+        </Preference>
+
+        <com.android.settings.custom.preference.SecureSettingSwitchPreference
+                android:key="qs_show_data_usage"
+                android:title="@string/qs_show_data_usage_title"
+                android:summary="@string/qs_show_data_usage_summary"
+                android:defaultValue="true" />
 
     </PreferenceCategory>
 

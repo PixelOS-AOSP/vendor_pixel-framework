@@ -43,7 +43,7 @@
         settings:searchable="false" />
 
     <com.android.settings.notification.VolumeSeekBarPreference
-        android:icon="@drawable/ic_audio_ring"
+        android:icon="@drawable/ic_notifications"
         android:key="ring_volume"
         android:order="-160"
         android:title="@string/ring_volume_option_title"
@@ -71,19 +71,13 @@
         android:title="@string/alarm_volume_option_title"
         settings:controller="com.android.settings.notification.AlarmVolumePreferenceController" />
 
-    <com.android.settings.custom.preference.SecureSettingSwitchPreference
-        android:key="volume_link_notification"
-        android:title="@string/volume_link_notification_title"
-        android:defaultValue="true"
-        android:order="-138"
-        settings:controller="com.android.settings.notification.LinkedVolumesPreferenceController"/>
-
+    <!-- Per-app volume  -->
     <com.android.settings.custom.preference.SystemSettingSwitchPreference
-         android:key="show_app_volume"
-         android:title="@string/app_volume_title"
-         android:summary="@string/app_volume_summary"
-         android:defaultValue="false"
-         android:order="-5"/>
+        android:key="show_app_volume"
+        android:title="@string/app_volume_title"
+        android:summary="@string/app_volume_summary"
+        android:defaultValue="false"
+        android:order="-5"/>
 
     <com.android.settingslib.RestrictedPreference
         android:fragment="com.android.settings.notification.zen.ZenModeSettings"
@@ -112,8 +106,8 @@
         android:ringtoneType="ringtone"
         settings:allowDividerAbove="false"
         android:order="-119"/>
- 
-   <!-- Adaptive Playback -->
+
+    <!-- Adaptive Playback -->
     <Preference
         android:key="sound_adaptive_playback_summary"
         android:title="@string/adaptive_playback_screen_title"
@@ -176,6 +170,14 @@
         android:title="@string/clear_calling_title"
         settings:controller="com.google.android.settings.notification.ClearCallingPreferenceController" />
 
+    <!-- Volume panel to left -->
+    <com.android.settings.custom.preference.SecureSettingSwitchPreference
+        android:key="volume_panel_on_left"
+        android:title="@string/volume_panel_on_left_title"
+        android:summary="@string/volume_panel_on_left_summary"
+        android:defaultValue="false"
+        android:order="-28" />
+
     <Preference
         android:fragment="com.android.settings.notification.SoundWorkSettings"
         android:key="sound_work_settings"
@@ -184,8 +186,9 @@
         settings:controller="com.android.settings.notification.WorkSoundsPreferenceController" />
 
     <Preference
-	android:key="sound_settings_advanced"
-	android:title="@string/sound_settings_advanced_title"
-        android:fragment="com.android.settings.sound.AdvancedSoundSettings"
+        android:key="sound_settings_advanced"
+        android:title="@string/sound_settings_advanced_title"
+        android:fragment="com.android.settings.notification.AdvancedSoundSettings"
 	android:order="-20" />
+
 </PreferenceScreen>
