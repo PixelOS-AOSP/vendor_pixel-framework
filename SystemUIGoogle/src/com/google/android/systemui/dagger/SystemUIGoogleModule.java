@@ -102,6 +102,7 @@ import com.google.android.systemui.statusbar.dagger.StartCentralSurfacesGoogleMo
 import com.google.android.systemui.statusbar.KeyguardIndicationControllerGoogle;
 import com.google.android.systemui.statusbar.policy.BatteryControllerImplGoogle;
 import com.google.android.systemui.elmyra.ServiceConfigurationGoogle;
+import com.google.android.systemui.statusbar.policy.dagger.SystemUIGooglePolicyModule;
 
 import com.android.systemui.statusbar.connectivity.BluetoothModule;
 import com.android.systemui.qs.tiles.CustomQSModule;
@@ -132,7 +133,7 @@ import dagger.Lazy;
         StatusBarEventsModule.class,
         CustomQSModule.class,
         BluetoothModule.class,
-        AospPolicyModule.class,
+        SystemUIGooglePolicyModule.class,
         RotationLockModule.class
 })
 public abstract class SystemUIGoogleModule {
