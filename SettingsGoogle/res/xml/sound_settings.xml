@@ -170,14 +170,6 @@
         android:title="@string/clear_calling_title"
         settings:controller="com.google.android.settings.notification.ClearCallingPreferenceController" />
 
-    <!-- Volume panel to left -->
-    <com.android.settings.custom.preference.SecureSettingSwitchPreference
-        android:key="volume_panel_on_left"
-        android:title="@string/volume_panel_on_left_title"
-        android:summary="@string/volume_panel_on_left_summary"
-        android:defaultValue="false"
-        android:order="-28" />
-
     <Preference
         android:fragment="com.android.settings.notification.SoundWorkSettings"
         android:key="sound_work_settings"
